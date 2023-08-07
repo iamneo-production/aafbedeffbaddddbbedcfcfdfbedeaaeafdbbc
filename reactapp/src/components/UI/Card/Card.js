@@ -2,22 +2,16 @@ import React, { useState } from "react";
 import "./Card.css";
 import Button from "../Button/Button";
 
-const Card = ({question, correctAnswerMarkUpdate, setCard, options, answer}) => {
+const Card = ({question, correctAnswerMarkUpdate, setCard, options, answer, setQsns, qsnAttempt}) => {
   const [isDisabled, setDisabled] = useState(false);
-  const [questionsAnswered, setQuestionsAnswered] = useState(0);
-  
-
-  const handleQuestionAnswered = () => {
-      setQuestionsAnswered(questionsAnswered+1);
-  }
 
   const optionClickHandler = (value) => {
-    handleQuestionAnswered();
+    setQsns(qsnAttempt+1);
     setDisabled(true);
-    console.log(questionsAnswered);
-    if(questionsAnswered === 3) {
+    console.log(qsnAttempt);
+    if(qsnAttempt === 3) {
         setCard(true);
-        console.log(questionsAnswered);
+        console.log(qsnAttempt);
     }
     if (value === answer) {
       correctAnswerMarkUpdate(true);

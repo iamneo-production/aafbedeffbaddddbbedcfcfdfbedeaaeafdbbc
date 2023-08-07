@@ -73,6 +73,7 @@ function App() {
         answer={q.answer}
         setCard={setShowResults}
         setQsns={setQuestionsAttempt}
+        qsnAttempt={questionsAttempt}
         />
       ))}
       </div>}
