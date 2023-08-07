@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Card.css";
+import "../Button/Button";
 
 const Card = (props) => {
   const [isDisabled, setDisabled] = useState(false);
@@ -29,14 +30,14 @@ const Card = (props) => {
       <h4 className="quesClass">{props.question}</h4>
       <div >
         {Object.keys(props.options).map((key) => (
-          <button
+          <Button
             key={key}
             disabled={isDisabled}
             onClick={() => optionClickHandler(props.options[key])}
             className="OptionBtn"
           >
             {props.options[key]}
-          </button>
+          </Button>
         ))}
       </div>
     </div>
