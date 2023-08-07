@@ -64,11 +64,17 @@ function App() {
   return (
     <div className="App">
       <h1>Quizz App</h1>
-      {card && <div> {questions.map(q) => (
-        <Card question={q.ques} correctAnswerMarkUpdate={}
-      )}}
+      {card && <div> {questions.map((q) => (
+        <Card 
+        question={q.ques} 
+        correctAnswerMarkUpdate={handleCorrectAnswerMarkUpdate}
+        options={q.Options}
+        answer={q.answer}
+        />
+      ))}
+      </div>}
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
