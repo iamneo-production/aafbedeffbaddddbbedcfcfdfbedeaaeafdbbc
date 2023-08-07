@@ -77,7 +77,7 @@ function App() {
                 key={item.quesId}
                 question={item.ques}
                 correctAnswerMarkUpdate={handleCorrectAnswerMarkUpdate}
-                setShowResults = {setShowResults}
+                setShowResults = {showResults}
                 options={item.Options}
                 answer={item.answer}
               />

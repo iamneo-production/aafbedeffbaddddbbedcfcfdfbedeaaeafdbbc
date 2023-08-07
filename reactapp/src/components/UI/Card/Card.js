@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Card.css";
 import Button from "../Button/Button";
 
-const Card = (props) => {
+const Card = ({question, correctAnswerMarkUpdate, setShowResults, options, answer}) => {
   const [isDisabled, setDisabled] = useState(false);
   const [questionsAnswered, setQuestionsAnswered] = useState(0);
   
@@ -11,17 +11,17 @@ const Card = (props) => {
       setQuestionsAnswered(questionsAnswered + 1);
   }
 
-  const optionClickHandler = (answer) => {
+  const optionClickHandler = (value) => {
     handleQuestionAnswered();
     setDisabled(true);
     if(questionsAnswered === 5) {
-        props.setShowResults(true);
+        setShowResults(true);
     }
-    if (answer === props.answer) {
-      props.correctAnswerMarkUpdate(true);
+    if (value === answer) {
+      correctAnswerMarkUpdate(true);
     }
     else{
-      props.correctAnswerMarkUpdate(false);
+      correctAnswerMarkUpdate(false);
     }
   };
 
@@ -29,11 +29,11 @@ const Card = (props) => {
     <div className="container-2">
       <h4 className="quesClass">{props.question}</h4>
       <div >
-        {Object.keys(props.options).map((key) => (
+        {Object.keys(options).map((key) => (
           <Button
             key={key}
             disabled={isDisabled}
-            onClick={() => optionClickHandler(props.options[key])}
+            onClick={() => optionClickHandler(options[key])}
             className="OptionBtn"
           >
             {props.options[key]}
