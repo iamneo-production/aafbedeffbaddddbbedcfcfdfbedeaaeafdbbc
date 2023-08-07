@@ -9,7 +9,7 @@ const Card = ({question, correctAnswerMarkUpdate, setCard, options, answer, setQ
     setQsns(qsnAttempt+1);
     setDisabled(true);
     console.log(qsnAttempt);
-    if(qsnAttempt === 3) {
+    if(qsnAttempt === 2) {
         setCard(true);
         console.log(qsnAttempt);
     }
