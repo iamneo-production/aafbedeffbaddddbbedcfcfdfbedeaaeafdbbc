@@ -11,15 +11,11 @@ const Card = (props) => {
       setQuestionsAnswered(questionsAnswered + 1);
   }
 
-  function handleShowResults() {
-      setShowResults(true);
-  }
-
   const optionClickHandler = (answer) => {
     handleQuestionAnswered();
     setDisabled(true);
     if(questionsAnswered === 5) {
-        handleShowResults();
+        props.setShowResults(true);
     }
     if (answer === props.answer) {
       props.correctAnswerMarkUpdate(true);

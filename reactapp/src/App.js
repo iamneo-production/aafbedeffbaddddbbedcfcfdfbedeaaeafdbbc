@@ -57,6 +57,7 @@ function App() {
   const handleShowResults = () => {
     console.log("Show Results", questionsCorrect);
     setShowQuiz(true);
+    setShowResults(false);
   }
   return (
     <div className="App">
@@ -76,7 +77,7 @@ function App() {
                 key={item.quesId}
                 question={item.ques}
                 correctAnswerMarkUpdate={handleCorrectAnswerMarkUpdate}
-                attempt={"ka"}
+                setShowResults = {setShowResults}
                 options={item.Options}
                 answer={item.answer}
               />
