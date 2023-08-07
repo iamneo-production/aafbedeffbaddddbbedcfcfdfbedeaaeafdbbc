@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Card.css";
-import "../Button/Button";
+import Button from "../Button/Button";
 
 const Card = (props) => {
   const [isDisabled, setDisabled] = useState(false);

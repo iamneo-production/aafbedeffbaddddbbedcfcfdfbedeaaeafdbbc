@@ -2,9 +2,11 @@ import React from 'react';
 
 const Button = (props) => {
     const {
-        btName = props.children,onClick,
-    }
-    return <button>{props.children}</button>;
+        btnName = props.children,onClick,disabled
+    } = props;
+    return (
+    <button onClick={onClick} disabled={disabled}>{btnName}</button>
+    )
   };
   
 export default Button;
