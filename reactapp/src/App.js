@@ -64,15 +64,18 @@ function App() {
   return (
     <div className="App">
       <h1>Quizz App</h1>
-      {card && <div> {questions.map((q) => (
+      {card && <div className='container'> {questions.map((q) => (
         <Card 
         question={q.ques} 
         correctAnswerMarkUpdate={handleCorrectAnswerMarkUpdate}
         options={q.Options}
         answer={q.answer}
+        setCard={setShowResults}
         />
       ))}
       </div>}
+      {showResults && <Button onClick={handleShowResults}>Show Results</Button>}
+      {start && <Button onClick={handleStartQuiz}>Start Quiz</Button>}
     </div>
   )
 }
