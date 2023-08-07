@@ -66,6 +66,7 @@ function App() {
       <h1>Quizz App</h1>
       {card && <div className='container'> {questions.map((q) => (
         <Card 
+        key={q.quesId}
         question={q.ques} 
         correctAnswerMarkUpdate={handleCorrectAnswerMarkUpdate}
         options={q.Options}

@@ -14,8 +14,10 @@ const Card = ({question, correctAnswerMarkUpdate, setCard, options, answer}) => 
   const optionClickHandler = (value) => {
     handleQuestionAnswered();
     setDisabled(true);
+    console.log(questionsAnswered);
     if(questionsAnswered === 3) {
         setCard(true);
+        console.log(questionsAnswered);
     }
     if (value === answer) {
       correctAnswerMarkUpdate(true);
