@@ -14,7 +14,7 @@ const Card = ({question, correctAnswerMarkUpdate, setShowResults, options, answe
   const optionClickHandler = (value) => {
     handleQuestionAnswered();
     setDisabled(true);
-    if(questionsAnswered === 5) {
+    if(questionsAnswered === 3) {
         setShowResults(true);
     }
     if (value === answer) {
@@ -27,7 +27,7 @@ const Card = ({question, correctAnswerMarkUpdate, setShowResults, options, answe
 
   return (
     <div className="container-2">
-      <h4 className="quesClass">{props.question}</h4>
+      <h4 className="quesClass">{question}</h4>
       <div >
         {Object.keys(options).map((key) => (
           <Button
@@ -36,7 +36,7 @@ const Card = ({question, correctAnswerMarkUpdate, setShowResults, options, answe
             onClick={() => optionClickHandler(options[key])}
             className="OptionBtn"
           >
-            {props.options[key]}
+            {options[key]}
           </Button>
         ))}
       </div>
