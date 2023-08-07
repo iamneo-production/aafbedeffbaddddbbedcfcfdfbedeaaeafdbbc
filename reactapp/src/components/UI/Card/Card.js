@@ -7,8 +7,8 @@ const Card = ({question, correctAnswerMarkUpdate, setCard, options, answer}) => 
   const [questionsAnswered, setQuestionsAnswered] = useState(0);
   
 
-  function handleQuestionAnswered() {
-      setQuestionsAnswered((questionsAnswered) => questionsAnswered+1);
+  const handleQuestionAnswered = () => {
+      setQuestionsAnswered(questionsAnswered+1);
   }
 
   const optionClickHandler = (value) => {
