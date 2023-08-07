@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Card.css";
 import Button from "../Button/Button";
 
-const Card = ({question, correctAnswerMarkUpdate, setShowResults, options, answer}) => {
+const Card = ({question, correctAnswerMarkUpdate, setCard, options, answer}) => {
   const [isDisabled, setDisabled] = useState(false);
   const [questionsAnswered, setQuestionsAnswered] = useState(0);
   
@@ -15,7 +15,7 @@ const Card = ({question, correctAnswerMarkUpdate, setShowResults, options, answe
     handleQuestionAnswered();
     setDisabled(true);
     if(questionsAnswered === 3) {
-        setShowResults(true);
+        setCard(true);
     }
     if (value === answer) {
       correctAnswerMarkUpdate(true);

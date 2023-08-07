@@ -9,6 +9,7 @@ function App() {
   const [questionsCorrect, setquestionsCorrect] = useState(0);
   const [showQuiz, setShowQuiz] = useState(false);
   const [showResults, setShowResults] = useState(false);
+  const [card, setCard] = useState(false);
   function handleStartQuiz(){
     setShowQuestions(true);
     setShowQuiz(false);
@@ -77,7 +78,7 @@ function App() {
                 key={item.quesId}
                 question={item.ques}
                 correctAnswerMarkUpdate={handleCorrectAnswerMarkUpdate}
-                setShowResults = {setShowResults}
+                setCard = {setShowResults}
                 options={item.Options}
                 answer={item.answer}
               />
