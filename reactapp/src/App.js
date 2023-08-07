@@ -5,14 +5,14 @@ import Card from "./components/UI/Card/Card"
 import Button  from './components/UI/Button/Button';
 
 function App() {
-  const [showQuestion ,setShowQuestions] = useState(false);
-  const [questionsCorrect, setquestionsCorrect] = useState(0);
-  const [showResults, setShowResults] = useState(false);
-  const [card, setCard] = useState(false);
-  const [start, setStart] = useState(true);
+  const [showQuestion ,setShowQuestions] = useState(false)
+  const [questionsCorrect, setquestionsCorrect] = useState(0)
+  const [showResults, setShowResults] = useState(false)
+  const [card, setCard] = useState(false)
+  const [start, setStart] = useState(true)
   function handleStartQuiz(){
-    setShowQuestions(true);
-    setShowQuiz(false);
+    setStart(false)
+    setCard(true)
   }
   const questions = [
     {
@@ -57,13 +57,16 @@ function App() {
   }
   const handleShowResults = () => {
     console.log("Show Results", questionsCorrect);
-    setShowQuiz(true);
+    setStart(true);
+    setCard(false);
     setShowResults(false);
   }
   return (
     <div className="App">
       <h1>Quizz App</h1>
-
+      {card && <div> {questions.map(q) => (
+        <Card question={q.ques} correctAnswerMarkUpdate={}
+      )}}
     </div>
   );
 }
