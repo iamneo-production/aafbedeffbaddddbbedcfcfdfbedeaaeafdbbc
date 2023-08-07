@@ -10,6 +10,7 @@ function App() {
   const [showResults, setShowResults] = useState(false)
   const [card, setCard] = useState(false)
   const [start, setStart] = useState(true)
+  const[res,setResult] = useState(false)
   function handleStartQuiz(){
     setStart(false)
     setCard(true)
@@ -77,8 +78,12 @@ function App() {
         />
       ))}
       </div>}
-      {showResults && <Button onClick={handleShowResults}>Show Results</Button>}
-      {start && <Button onClick={handleStartQuiz}>Start Quiz</Button>}
+      {showResults && <Button onClick={handleShowResults} className="ResultBtn">Show Results</Button>}
+      {res && <div className='ResultDiv'>
+            <h1 className='ResultText'>You have answered {questionsCorrect} / {questions.length} Correctly</h1>
+          </div>
+      }
+      {start && <Button onClick={handleStartQuiz} className="Startbtn">Start Quiz</Button>}
     </div>
   )
 }
