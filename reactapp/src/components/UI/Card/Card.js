@@ -5,7 +5,7 @@ import Button from "../Button/Button";
 const Card = (props) => {
   const [isDisabled, setDisabled] = useState(false);
   const [questionsAnswered, setQuestionsAnswered] = useState(0);
-  const [showResults, setShowResults] = useState(false);
+  
 
   function handleQuestionAnswered() {
       setQuestionsAnswered(questionsAnswered + 1);

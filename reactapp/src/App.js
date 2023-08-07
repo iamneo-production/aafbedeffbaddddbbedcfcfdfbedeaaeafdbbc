@@ -8,7 +8,7 @@ function App() {
   const [showQuestion ,setShowQuestions] = useState(false);
   const [questionsCorrect, setquestionsCorrect] = useState(0);
   const [showQuiz, setShowQuiz] = useState(false);
-  
+  const [showResults, setShowResults] = useState(false);
   function handleStartQuiz(){
     setShowQuestions(true);
     setShowQuiz(false);
@@ -54,7 +54,7 @@ function App() {
       setquestionsCorrect(questionsCorrect + 1);
     }
   }
-  const showResults = () => {
+  const handleShowResults = () => {
     console.log("Show Results", questionsCorrect);
     setShowQuiz(true);
   }
@@ -82,7 +82,7 @@ function App() {
               />
             ))}
           </div>
-            <Button onClick={showResults} className='ResultBtn'>Show Results</Button>
+            {showResults && <Button onClick={handleShowResults} className='ResultBtn'>Show Results</Button>}
           </>
         )
         :
