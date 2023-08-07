@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import React , {useState} from 'react';
 import Card from "./components/UI/Card/Card"
@@ -13,6 +12,7 @@ function App() {
   const[res,setResult] = useState(false)
   function handleStartQuiz(){
     setStart(false)
+    setResult(false)
     setCard(true)
   }
   const questions = [
@@ -58,6 +58,7 @@ function App() {
   }
   const handleShowResults = () => {
     console.log("Show Results", questionsCorrect);
+    setResult(true);
     setStart(true);
     setCard(false);
     setShowResults(false);
