@@ -5,7 +5,7 @@ import Card from "./components/UI/Card/Card"
 import Button  from './components/UI/Button/Button';
 
 function App() {
-  const [showQuestion ,setShowQuestions] = useState(false)
+  const [questionsAttempt ,setQuestionsAttempt] = useState(0)
   const [questionsCorrect, setquestionsCorrect] = useState(0)
   const [showResults, setShowResults] = useState(false)
   const [card, setCard] = useState(false)
@@ -72,6 +72,7 @@ function App() {
         options={q.Options}
         answer={q.answer}
         setCard={setShowResults}
+        setQsns={setQuestionsAttempt}
         />
       ))}
       </div>}
