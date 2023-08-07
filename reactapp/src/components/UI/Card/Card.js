@@ -8,7 +8,7 @@ const Card = ({question, correctAnswerMarkUpdate, setCard, options, answer}) => 
   
 
   function handleQuestionAnswered() {
-      setQuestionsAnswered(questionsAnswered + 1);
+      setQuestionsAnswered((questionsAnswered) => questionsAnswered+1);
   }
 
   const optionClickHandler = (value) => {
