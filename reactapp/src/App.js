@@ -7,9 +7,9 @@ import Button  from './components/UI/Button/Button';
 function App() {
   const [showQuestion ,setShowQuestions] = useState(false);
   const [questionsCorrect, setquestionsCorrect] = useState(0);
-  const [showQuiz, setShowQuiz] = useState(false);
   const [showResults, setShowResults] = useState(false);
   const [card, setCard] = useState(false);
+  const [start, setStart] = useState(true);
   function handleStartQuiz(){
     setShowQuestions(true);
     setShowQuiz(false);
@@ -63,38 +63,7 @@ function App() {
   return (
     <div className="App">
       <h1>Quizz App</h1>
-      {
-        !showQuestion ? 
-        (
-          <button className='Startbtn' onClick={handleStartQuiz}>Start Quiz</button>
-        )
-        :
-        showQuiz===false?
-        (
-          <>
-          <div className="container">
-            {questions.map((item) => (
-              <Card 
-                key={item.quesId}
-                question={item.ques}
-                correctAnswerMarkUpdate={handleCorrectAnswerMarkUpdate}
-                setCard = {setShowResults}
-                options={item.Options}
-                answer={item.answer}
-              />
-            ))}
-          </div>
-            {showResults && <Button onClick={handleShowResults} className='ResultBtn'>Show Results</Button>}
-          </>
-        )
-        :
-        (
-          <div className='ResultDiv'>
-            <h1 className='ResultText'>You have answered {questionsCorrect} / {questions.length} Correctly</h1>
-            <Button className='Startbtn' onClick={handleStartQuiz}>Start Quiz</Button>
-          </div>  
-        )
-      }
+
     </div>
   );
 }
